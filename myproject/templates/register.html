@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>regi</title>
+    <style>
+     .main-block {
+      max-width: 340px;
+      min-height: 560px;
+      padding: 10px 0;
+      margin: auto;
+      border-radius: 5px;
+      border: solid 1px #ccc;
+      box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+      background: #ebebeb;
+      }
+   .form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.email {
+width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+.username{width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+.first{width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  </br>
+}
+.last{width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+
+}
+.pwd{width: 50%;
+  padding: 12px 15px;
+  margin: 8px 0;
+}
+.pwd1{width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+}
+.btn {
+      margin-top: 10px;
+      text-align: center;
+      }
+      input[type=password] {
+      margin-bottom: 15px;
+      }
+    </style>
+</head>
+<body style="background-color:powderblue;">
+<div class="main-block">
+<h2>Registration </h2>
+<form class="form-inline" action="" method="post">
+    {% csrf_token %}
+    <label class="username">UserName</label>
+    <input type="text" name="username" placeholder="UserName">
+    <label class="fist">First Name</label>
+    <input type="text" name="first_name" placeholder="FirstName"></br>
+    <label class="last">Last Name</label>
+    <input type="text" name="last_name" placeholder="LastName"></br>
+    <label class="email">Email:</label>
+    <input type="email" name="email" placeholder="Email"></br>
+    <label class="pwd">Password</label>
+    <input type="password" name="password" placeholder="Password"></br>
+    <label class="pwd1">Conform Password</label>
+    <input type="password" name="password1" placeholder="conformPassword"></br>
+    <div class="btn">
+    <input type="submit">
+    </div>
+</form>
+</div>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="row" xmlns="http://www.w3.org/1999/html">
+    <div class="col-md-6">
+        <img src="{{movie.img.url}}"class="img-fluid img-thumbnail"  width="300" height="500"  >
+    </div>
+    <div class="col-md-6">
+        <h4> {{movie.name}}</h4>
+          {{movie.decs}}</br>
+    <a class="btn btn-info" href="{% url 'filmapp:update' movie.id %}">update</a></br>
+    <a class="btn btn-danger" href="{% url 'filmapp:delete' movie.id %}">delete</a>
+    </div>
+</div>
+{% endblock %}

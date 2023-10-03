@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% for i in movie_list %}
+        <div class="col-md-3">
+            <div class="url('https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp');" style="width: 18rem;">
+  <img class="rounded float-left" src="{{i.img.url}}" alt="Card image cap" width="240px" height="350px">
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+    <a href="{% url 'filmapp:detail' i.id %}" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
